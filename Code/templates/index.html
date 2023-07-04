@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static\index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <title>Diabetes Prediction</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Diabetes Prediction</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About Diabetes</a>
+            </li>
+          </ul>
+        </div> -->
+      </div>
+    </nav>
+    <div class="form-outline">
+      {% if pred==1 %}
+      <h2>
+        <span style="color: red">Diabetic Patient, Needs A Treatment :(</span>
+      </h2>
+      {% elif pred==0 %}
+      <h2>
+        <span style="color: green"
+          >Non - Diabetic Patient, But Be Concious :)</span
+        >
+      </h2>
+      {% endif %}
+      <form method="POST">
+        <div class="mb-3">
+          <label for="exampleInputPregnancies" class="form-label"
+            >Pregnancies</label
+          >
+          <input
+            type="number"
+            name="enteredPregnancies"
+            class="form-control"
+            id="exampleInputPregnancies"
+            aria-describedby="pregnanciesHelp"
+          />
+          <div class="form-text">Number of times pregnant. (Put 0 If Male)</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputGlucose" class="form-label">Glucose</label>
+          <input
+            type="number"
+            name="enteredGlucose"
+            class="form-control"
+            id="exampleInputGlucose"
+            aria-describedby="glucoseHelp"
+          />
+          <div class="form-text">
+            Plasma glucose concentration a 2 hours in an oral glucose tolerance
+            test.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputBP" class="form-label">Blood Pressure</label>
+          <input
+            type="number"
+            name="enteredBP"
+            class="form-control"
+            id="exampleInputBP"
+            aria-describedby="BPHelp"
+          />
+          <div class="form-text">Diastolic blood pressure (mm Hg).</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputSkinThickness" class="form-label"
+            >Skin Thickness</label
+          >
+          <input
+            type="number"
+            name="enteredSkinThickness"
+            class="form-control"
+            id="exampleInputSkinThickness"
+            aria-describedby="skinThicknessHelp"
+          />
+          <div class="form-text">Triceps skin fold thickness (mm).</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputInsulin" class="form-label">Insulin</label>
+          <input
+            type="number"
+            name="enteredInsulin"
+            class="form-control"
+            id="exampleInputInsulin"
+            aria-describedby="insulinHelp"
+          />
+          <div class="form-text">2-Hour serum insulin (mu U/ml).</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputBMI" class="form-label">BMI</label>
+          <input
+            type="number"
+            name="enteredBMI"
+            class="form-control"
+            id="exampleInputBMI"
+            aria-describedby="BMIHelp"
+          />
+          <div class="form-text">
+            Body mass index (weight in kg/(height in m)^2).
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputDiabetesPedigreeFunction" class="form-label"
+            >Diabetes Pedigree Function</label
+          >
+          <input
+            type="number"
+            name="enteredDiabetesPedigreeFunction"
+            class="form-control"
+            id="exampleInputDiabetesPedigreeFunction"
+            aria-describedby="diabetesPedigreeFunctionHelp"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputAge" class="form-label">Age</label>
+          <input
+            type="number"
+            name="enteredAge"
+            class="form-control"
+            id="exampleInputAge"
+            aria-describedby="ageHelp"
+          />
+          <div class="form-text">Age (years).</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      <!-- {% if pred==1 %}
+      <h2>
+        <span style="color: red">Diabetic Patient, Needs A Treatment :(</span>
+      </h2>
+      {% elif pred==0 %}
+      <h2>
+        <span style="color: green"
+          >Non - Diabetic Patient, But Be Concious :)</span
+        >
+      </h2>
+      {% endif %} -->
+    </div>
+  </body>
+</html>
